@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npx nodemon Server\" \"cd frontend && npm start\"",
-    "data:import": "node Seederscript.js"
+    "start": "node Server.js",
+    "dev": "concurrently \"npx nodemon Server\" \"cd client && npm start \"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.13.0"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "concurrently": "^7.1.0",
